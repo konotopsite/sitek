@@ -230,7 +230,7 @@
 /*Responsive450*/
 @media (max-width: 450px){
     .classDivs1{
-        min-height: 95vh;
+        min-height: 100vh;
         background-position: 30% 100%;
     }
     .classDivs2{
@@ -240,7 +240,7 @@
         min-height: 100vh;
     }
     .blo1{
-        height: 104vh; 
+        height: 105vh; 
     }
     .nadp{
         left: 8px;
