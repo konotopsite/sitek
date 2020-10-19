@@ -142,10 +142,10 @@ var cloud = new Image();
 var cloud1 = new Image();
 var cloud2 = new Image();
 var cloud3 = new Image();
-cloud.src = '/cloud1.png';
-cloud1.src = '/cloud2.png';
-cloud2.src = '/cloud3.png';
-cloud3.src = '/cloud4.png';
+cloud.src = 'cloud1.png';
+cloud1.src = 'cloud2.png';
+cloud2.src = 'cloud3.png';
+cloud3.src = 'cloud4.png';
 
 function Cloude(imgg, x, y, wi, hi, usk){
     this.imgg = imgg;
