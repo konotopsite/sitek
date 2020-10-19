@@ -69,7 +69,7 @@ function max750() {
     nadp.style.transform = 'translateY('+(scrollPosition/5)+'px)';
     console.log(scrollPosition)
     hh2.style.opacity = 0.3 + scrollPosition/1000;
-    if(scrollPosition < 350 ) {
+    if(scrollPosition < 700 ) {
         containerL.style.transform = 'translateY(-'+(scrollPosition/14)+'px)';
         containerR.style.transform = 'translateY(-'+(scrollPosition/14)+'px)';
         twoContainers.style.opacity = 0.3 + scrollPosition/1000;
@@ -162,10 +162,7 @@ let statRandom150 = 0;
 if(window.innerWidth > 1199){
     statRandom150 = 150 + Math.random()*30;
 }
-if(window.innerWidth < 1200 && window.innerWidth > 900){
-    statRandom150 = 100 + Math.random()*30;
-}
-if(window.innerWidth < 900 && window.innerWidth > 750){
+if(window.innerWidth < 1200 && window.innerWidth > 899){
     statRandom150 = 100 + Math.random()*30;
 }
 if(window.innerWidth < 750 && window.innerWidth > 450) {
@@ -219,7 +216,7 @@ function draw() {
         cloudFor.x=cloudFor.x + cloudFor.usk;
         if(cloudFor.x > cnv.width){
             cloudFor.x = -300;
-            cloudFor.y = 10.5 + Math.random()*cnv.height/2;
+            cloudFor.y = 70.5 + Math.random()*cnv.height/2;
             cloudFor.hi = 100 + Math.random()*50;
             cloudFor.wi = cloudFor.hi*2;
             if(window.innerWidth < 451){
