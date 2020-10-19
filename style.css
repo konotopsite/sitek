@@ -6,6 +6,12 @@
     padding: 0;
     font-family: 'Amatic SC', cursive;
 }
+.invizBut{
+    position: absolute;
+    width: 100%;
+    height: 10vh;
+    z-index: 999;
+}
 .containerAbsoluts{
     position: relative;
 }
@@ -17,12 +23,23 @@
     background-size: cover;
     top: 0;
     left: 0;
-    transition: 0.4s;
+    transition: 1s;
     z-index: 1;
     background-position: 0% 0%;
     background-repeat: no-repeat;
 }
-
+.moon{
+    display: none;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 10px;
+    right: 0;
+    background: url(luna.png);
+    background-size: contain;
+    z-index: 9;
+    transition: 1.5s;
+}
 .classDivs2{
     min-width: 100%;
     min-height: 100vh;
@@ -31,10 +48,11 @@
     background-size: 100%;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 12;
     transition: 0.3s;
     background-repeat: no-repeat;
     background-position: 0% 100%;
+    filter: contrast(130%);
 }
 .classDivs3{
     top: 0;
@@ -48,6 +66,7 @@
     z-index: 230;
     transition: 0.7s;
     background-repeat: no-repeat;
+    filter: contrast(110%);
 }
 .nadp{
     position: absolute;
@@ -70,8 +89,6 @@
     z-index: 0;
 }
 .blo{
-    width: 100%;
-    height: 100vh;
     top: -25px;
     background: #050038;
     position: relative;
@@ -132,16 +149,25 @@
     padding: 20px;
     transition: 1s;
     font-size: 22px;
-
+    color: #ffaafb;
 }
 #clouds{
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2;
-    opacity: 0.3 ;
-    transition: 1s;
-    
+    z-index: 10;
+    opacity: 0.15 ;
+    transition: 1s; 
+
+}
+#stars{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    opacity: 1 ;
+    transition: 1s; 
+    opacity: 0.5;
 }
 
 
@@ -213,10 +239,10 @@
         font-size: 110px;
     }
     .containerL{
-        margin: 10px;
+        margin: 8px;
     }
     .containerR{
-        margin: 10px;
+        margin: 8px;
     }
     .twoContainers{
        flex-direction: column;
@@ -231,7 +257,7 @@
 @media (max-width: 450px){
     .classDivs1{
         min-height: 97vh;
-        background-position: 30% 100%;
+        background-position: 10% 100%;
     }
     .classDivs2{
         min-height: 100vh;
@@ -252,14 +278,12 @@
         font-size: 60px;
     }
     .hh2{
-        width: 300px;
-        height: 10vh;
+        width: 100%;
+        height: 15vh;
         background-size: contain; 
     }
-    .twoContainers{
-        height: 100vh ;
-    }
     .twoContainers p{
+        width: 90%;
         font-size: 12px;
     }
 }
