@@ -220,7 +220,7 @@ function draw() {
             cloudFor.hi = 100 + Math.random()*50;
             cloudFor.wi = cloudFor.hi*2;
             if(window.innerWidth < 451){
-                cloudFor.hi = 40 + Math.random()*40;
+                cloudFor.hi = 50 + Math.random()*50;
                 cloudFor.wi = cloudFor.hi*2;
             }
             console.log(cloudFor.wi)
