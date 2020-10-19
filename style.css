@@ -13,7 +13,7 @@
     min-width: 100%;
     min-height: 80vh;
     position: absolute;
-    background: url(/11.png);
+    background: url(11.png);
     background-size: cover;
     top: 0;
     left: 0;
@@ -27,7 +27,7 @@
     min-width: 100%;
     min-height: 100vh;
     position: absolute;
-    background: url(/22.png);
+    background: url(22.png);
     background-size: 100%;
     top: 0;
     left: 0;
@@ -42,7 +42,7 @@
     min-width: 100%;
     min-height: 100vh;
     position: absolute;
-    background: url(/33.png);
+    background: url(33.png);
     background-position: 100% 100%;
     background-size: 100%;
     z-index: 30;
@@ -96,7 +96,7 @@
 }
 .hh2{
     position: relative;
-    background: url(/trySSS.png);
+    background: url(trySSS.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
