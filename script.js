@@ -241,6 +241,7 @@ window.onresize = ()=>{
 }
 
 var timStars;
+
 let colorStars = ['#cdfdff' , '#8efff0', '#fffd8a', '#ffaafb'];
 function drawStars() {
     let xx = Math.random()*canva.width;
@@ -264,8 +265,8 @@ document.querySelector('.invizBut').onclick = ()=>{
         clearTimeout(timStars)
         draw()
         drawStars()
-        canva.style.opacity = 0.6;
-        cnv.style.opacity = 0.15;
+        canva.style.opacity = 0.5;
+        cnv.style.opacity = 0.1;
         classDivs1.style.opacity = 0;
         console.log(counterCanvas)
         counterCanvas = 1;
@@ -284,15 +285,15 @@ document.querySelector('.invizBut').onclick = ()=>{
         clearTimeout(tim)
         draw()
         classDivs2.style.filter = 'contrast(130%)';
-        classDivs3.style.filter = 'contrast(110%)';
+        classDivs3.style.filter = 'contrast(110%)'; 
         document.querySelector('.moon').style.display = 'none';
     }
    
     
 }
 
-window.onload =()=>{
-    document.querySelector('wrapper').style.transform = 'translateY(-100vh)';
+window.onload =()=>{/*
+    document.querySelector('wrapper').style.transform = 'translateY(-10vh)';*/
     document.querySelector('wrapper').style.opacity = 0;
     setTimeout(()=>{
         document.querySelector('wrapper').style.display = 'none';},1500)
