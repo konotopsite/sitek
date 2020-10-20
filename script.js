@@ -290,3 +290,12 @@ document.querySelector('.invizBut').onclick = ()=>{
    
     
 }
+
+window.onload =()=>{
+    document.querySelector('wrapper').style.transform = 'translateY(-100vh)';
+    document.querySelector('wrapper').style.opacity = 0;
+    setTimeout(()=>{
+        document.querySelector('wrapper').style.display = 'none';},1500)
+    
+
+}
