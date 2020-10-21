@@ -25,30 +25,31 @@ function Cloude(imgg, x, y, wi, hi, usk){
     this.wi = wi;
     this.hi = hi;
     this.usk = usk;
+    this.counter = 0;
 }
 
 var cloudsObjsArry = [];
 
 function addEigClo(){
-    var cloudObj = new Cloude(cloud1 , canvas.width/2, canvas.height + Math.floor((Math.random()*canvas.height)/3), 6 , 6 , 2);
+    var cloudObj = new Cloude(cloud1 , canvas.width/2, canvas.height + Math.floor((Math.random()*canvas.height)/3), 6 , 6 , 1.5);
     cloudsObjsArry.push(cloudObj);
-    var cloudObj = new Cloude(cloud2 , canvas.width/2, canvas.height+Math.floor((canvas.height/3)+((Math.random()*canvas.height)/3)) , 3 , 3 , 2);
+    var cloudObj = new Cloude(cloud2 , canvas.width/2, canvas.height+Math.floor((canvas.height/3)+((Math.random()*canvas.height)/3)) , 3 , 3 , 1.5);
     cloudsObjsArry.push(cloudObj);
-    var cloudObj = new Cloude(cloud3 , canvas.width/2, canvas.height+Math.floor((canvas.height/3*2)+((Math.random()*canvas.height)/3)) , 6 , 6 , 2);
-    cloudsObjsArry.push(cloudObj);
-    
-    var cloudObj = new Cloude(cloud2 , canvas.width/2, canvas.height + Math.floor((Math.random()*canvas.height)/3), 8 , 8 , 2);
-    cloudsObjsArry.push(cloudObj);
-    var cloudObj = new Cloude(cloud3 , canvas.width/2, canvas.height+Math.floor((canvas.height/3)+((Math.random()*canvas.height)/3)) , 2 , 2 ,2);
-    cloudsObjsArry.push(cloudObj);
-    var cloudObj = new Cloude(cloud1 , canvas.width/2, canvas.height+Math.floor((canvas.height/3*2)+((Math.random()*canvas.height)/3)) , 8 , 8 , 2);
+    var cloudObj = new Cloude(cloud3 , canvas.width/2, canvas.height+Math.floor((canvas.height/3*2)+((Math.random()*canvas.height)/3)) , 6 , 6 , 1.5);
     cloudsObjsArry.push(cloudObj);
     
-    var cloudObj = new Cloude(cloud3 , canvas.width/2, canvas.height + Math.floor((Math.random()*canvas.height)/3), 8 , 8 , 2);
+    var cloudObj = new Cloude(cloud2 , canvas.width/2, canvas.height + Math.floor((Math.random()*canvas.height)/3), 8 , 8 , 1.5);
     cloudsObjsArry.push(cloudObj);
-    var cloudObj = new Cloude(cloud1 , canvas.width/2, canvas.height+Math.floor((canvas.height/3)+((Math.random()*canvas.height)/3)) , 10 , 10 , 2);
+    var cloudObj = new Cloude(cloud3 , canvas.width/2, canvas.height+Math.floor((canvas.height/3)+((Math.random()*canvas.height)/3)) , 2 , 2 ,1.5);
     cloudsObjsArry.push(cloudObj);
-    var cloudObj = new Cloude(cloud2 , canvas.width/2, canvas.height+Math.floor((canvas.height/3*2)+((Math.random()*canvas.height)/3)) , 6 , 6 , 2);
+    var cloudObj = new Cloude(cloud1 , canvas.width/2, canvas.height+Math.floor((canvas.height/3*2)+((Math.random()*canvas.height)/3)) , 8 , 8 , 1.5);
+    cloudsObjsArry.push(cloudObj);
+    
+    var cloudObj = new Cloude(cloud3 , canvas.width/2, canvas.height + Math.floor((Math.random()*canvas.height)/3), 8 , 8 , 1.5);
+    cloudsObjsArry.push(cloudObj);
+    var cloudObj = new Cloude(cloud1 , canvas.width/2, canvas.height+Math.floor((canvas.height/3)+((Math.random()*canvas.height)/3)) , 10 , 10 , 1.5);
+    cloudsObjsArry.push(cloudObj);
+    var cloudObj = new Cloude(cloud2 , canvas.width/2, canvas.height+Math.floor((canvas.height/3*2)+((Math.random()*canvas.height)/3)) , 6 , 6 , 1.5);
     cloudsObjsArry.push(cloudObj);
     }
 
@@ -72,7 +73,7 @@ function addEigClo(){
     console.log(cloudsObjsArry);
 
   
-    
+
 function draw() {
     ctx.clearRect(0,0,canvas.width, canvas.height);
     for(let i=0; i<cloudsObjsArry.length;i++){
@@ -84,25 +85,56 @@ function draw() {
             cloudFor.wi =  Math.floor(Math.random()*10)  
         }
         var counterForRand = Math.floor(Math.random()*2)
-        if(cloudFor.y < canvas.height - canvas.height/2){
+        if(cloudFor.y < canvas.height /*- canvas.height/2*/){
             if(counterForRand == 0){
-                cloudFor.wi = cloudFor.wi +0.8;
+                cloudFor.wi = cloudFor.wi + 1.6;
                 cloudFor.hi = cloudFor.wi;
             }
             if(counterForRand == 1){
-                cloudFor.wi = cloudFor.wi -0.4;
+                cloudFor.wi = cloudFor.wi -0.8;
                 cloudFor.hi = cloudFor.wi;
             }
         }
-        var counterForRand = Math.floor(Math.random()*2) /*   Generate 0 1  */
-        if(cloudFor.y < canvas.height - canvas.height/2){
+        
+        var counterForRand = Math.floor(Math.random()*2) 
+        if(cloudFor.y < canvas.height /*- canvas.height/2*/){
             if(counterForRand == 0){
-                cloudFor.x = cloudFor.x -0.3;
+                cloudFor.x = cloudFor.x + 1.5;
             }
             if(counterForRand == 1){
-                cloudFor.x = cloudFor.x + 0.7;
+                cloudFor.x = cloudFor.x - 0.5;
             }
         }
+        
+       if(cloudFor.x <= canvas.width/2 - 6){
+        cloudFor.counter = 1;
+
+        console.log('x ==')
+       }
+       if(cloudFor.x >= canvas.width/2 + 6){
+        cloudFor.counter = 0;
+       }
+        if(cloudFor.counter == 1){
+        cloudFor.x = cloudFor.x + 1;
+        }
+        if(cloudFor.counter == 0){
+            cloudFor.x = cloudFor.x - 1;
+        }
+        
+        if(cloudFor.y < (canvas.height  - canvas.height/2) - canvas.height/3  ){
+            if(counterForRand == 0){
+                cloudFor.wi = cloudFor.wi - 2.2;
+                cloudFor.hi = cloudFor.wi;
+            }
+            if(counterForRand == 1){
+                cloudFor.wi = cloudFor.wi - 0.8;
+                cloudFor.hi = cloudFor.wi;
+            }
+        }
+       
+        
+            
+        
 
        
         ctx.drawImage(cloudFor.imgg, cloudFor.x , cloudFor.y , cloudFor.wi , cloudFor.hi ); 
@@ -150,5 +182,4 @@ function draw() {
     }
     tim = setTimeout(draw, 40)
     }
-
-    */
+*/

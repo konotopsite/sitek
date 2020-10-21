@@ -5,6 +5,7 @@
 }
 body{
     background: #120033;
+    background: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +25,7 @@ body{
     top: 0;
     background: linear-gradient(0deg,#08002700,#080027);
     width: 100%;
-    height: 30vh;
+    height: 50vh;
     z-index: 99;
 }
 .dom{
@@ -32,6 +33,7 @@ body{
     height: 100vh;
 }
 .domElki{
+    opacity: 0;
     position: absolute;
     top: 0;
     left: -23px;
@@ -42,3 +44,6 @@ body{
     background-position: center;
     background-size: cover;
 }
+
+
+
