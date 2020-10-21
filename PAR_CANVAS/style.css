@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #120033;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#par{
+    background: #080027;
+    width: 600px;
+    height: 600px;
+}
+.kords{
+    background: #ff2600;
+    border-radius: 9px;
+    height: 30px;
+    width: 200px;
+    margin-top: 100px;
+    text-align: center;
+}
+.opacit{
+    position: absolute;
+    top: 0;
+    background: linear-gradient(0deg,#08002700,#080027);
+    width: 600px;
+    height: 200px;
+    
+}
