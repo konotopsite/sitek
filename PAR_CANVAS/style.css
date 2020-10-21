@@ -10,11 +10,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-#par{
-    background: #080027;
-    width: 600px;
-    height: 600px;
-}
+
 .kords{
     background: #ff2600;
     border-radius: 9px;
@@ -27,7 +23,22 @@ body{
     position: absolute;
     top: 0;
     background: linear-gradient(0deg,#08002700,#080027);
-    width: 600px;
-    height: 200px;
-    
+    width: 100%;
+    height: 30vh;
+    z-index: 99;
+}
+.dom{
+    width: 100%;
+    height: 100vh;
+}
+.domElki{
+    position: absolute;
+    top: 0;
+    left: -23px;
+    width: 100%;
+    height: 100vh;
+    background: url(dom.png);
+    z-index: 200;
+    background-position: center;
+    background-size: cover;
 }
