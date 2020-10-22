@@ -300,3 +300,143 @@ window.onload =()=>{/*
     
 
 }
+
+/*--------------------------------------------------------------------------- */
+
+let canvvolk = document.querySelector('#par')
+let ctxVolk = canvvolk.getContext('2d');
+let timVolk;
+var arrParObjs = [];
+
+canvvolk.width = document.querySelector('.dom').clientWidth
+canvvolk.height = document.querySelector('.dom').clientHeight
+window.onresize = ()=>{
+    canvvolk.width = classDivs1.clientWidth;
+    canvvolk.height = classDivs1.clientHeight;
+}
+
+var par1 = new Image();
+var par2 = new Image();
+var par3 = new Image();
+par1.src = '1p.png';
+par2.src = '2p.png';
+par3.src = '3p.png';
+
+function Par(imagee, xx, yy, wwi, hhi, uskorenie){
+    this.imagee = imagee;
+    this.xx = xx;
+    this.yy = yy;
+    this.wwi = wwi;
+    this.hhi = hhi;
+    this.uskorenie = uskorenie;
+    this.counterPar = 0;
+}
+
+function addObjectPar(){
+    var parObj = new Par(par1 , canvvolk.width/2, canvvolk.height + Math.floor((Math.random()*canvvolk.height)/3), 6 , 6 , 1.5);
+    arrParObjs.push(parObj);
+    var parObj = new Par(par2 , canvvolk.width/2, canvvolk.height + Math.floor((Math.random()*canvvolk.height)/3), 5 , 5 , 1.5);
+    arrParObjs.push(parObj);
+    var parObj = new Par(par3 , canvvolk.width/2, canvvolk.height + Math.floor((Math.random()*canvvolk.height)/3), 3 , 3 , 1.5);
+    arrParObjs.push(parObj);
+
+    var parObj = new Par(par2 , canvvolk.width/2, canvvolk.height + Math.floor((Math.random()*canvvolk.height)/2), 7 , 7 , 1.5);
+    arrParObjs.push(parObj);
+    var parObj = new Par(par3 , canvvolk.width/2, canvvolk.height + Math.floor((Math.random()*canvvolk.height)/2), 6 , 6 , 1.5);
+    arrParObjs.push(parObj);
+    var parObj = new Par(par1 , canvvolk.width/2, canvvolk.height + Math.floor((Math.random()*canvvolk.height)/2), 8 , 8 , 1.5);
+    arrParObjs.push(parObj);
+
+    var parObj = new Par(par3 , canvvolk.width/2, canvvolk.height + Math.floor(Math.random()*canvvolk.height), 4 , 4 , 1.5);
+    arrParObjs.push(parObj);
+    var parObj = new Par(par1 , canvvolk.width/2, canvvolk.height + Math.floor(Math.random()*canvvolk.height), 4 , 4 , 1.5);
+    arrParObjs.push(parObj);
+    var parObj = new Par(par2 , canvvolk.width/2, canvvolk.height + Math.floor(Math.random()*canvvolk.height), 9 , 9 , 1.5);
+    arrParObjs.push(parObj);
+}
+
+addObjectPar()
+addObjectPar()
+addObjectPar()
+addObjectPar()
+addObjectPar()
+addObjectPar()
+addObjectPar()
+addObjectPar()
+addObjectPar()
+addObjectPar()
+addObjectPar()
+addObjectPar()
+addObjectPar()
+addObjectPar()
+addObjectPar()
+addObjectPar()
+
+function drawPar() {
+    ctxVolk.clearRect(0,0,canvvolk.width, canvvolk.height)
+    for(let i=0; i<arrParObjs.length;i++){
+        var pob = arrParObjs[i]
+        
+        
+            pob.yy = pob.yy - pob.uskorenie; 
+            if(pob.yy < 0){
+                pob.yy = canvvolk.height - 10;
+                pob.xx = canvvolk.width/2;
+                pob.wwi =  Math.floor(Math.random()*10)  
+            }
+            var counterForRand = Math.floor(Math.random()*2)
+            if(pob.yy < canvvolk.height /*- canvvolk.height/2*/){
+                if(counterForRand == 0){
+                    pob.wwi = pob.wwi + 1.6;
+                    pob.hhi = pob.wwi;
+                }
+                if(counterForRand == 1){
+                    pob.wwi = pob.wwi - 0.8;
+                    pob.hhi = pob.wwi;
+                }
+            }
+            
+            var counterForRand = Math.floor(Math.random()*2) 
+            if(pob.yy < canvvolk.height /*- canvvolk.height/2*/){
+                if(counterForRand == 0){
+                    pob.xx = pob.xx + 1.5;
+                }
+                if(counterForRand == 1){
+                    pob.xx = pob.xx - 0.5;
+                }
+            }
+            
+           if(pob.xx <= canvvolk.width/2 - 6){
+            pob.counterPar = 1;
+    
+          
+           }
+           if(pob.xx >= canvvolk.width/2 + 6){
+            pob.counterPar = 0;
+           }
+            if(pob.counterPar == 1){
+            pob.xx = pob.xx + 1;
+            }
+            if(pob.counterPar == 0){
+                pob.xx = pob.xx - 1;
+            }
+            
+            if(pob.yy < (canvvolk.height  - canvvolk.height/2) - canvvolk.height/3  ){
+                if(counterForRand == 0){
+                    pob.wwi = pob.wwi - 2.2;
+                    pob.hhi = pob.wwi;
+                }
+                if(counterForRand == 1){
+                    pob.wwi = pob.wwi - 0.8;
+                    pob.hhi = pob.wwi;
+                }
+            }
+
+        ctxVolk.drawImage(pob.imagee, pob.xx ,pob.yy ,pob.wwi ,pob.hhi )
+}
+    
+
+timVolk = setTimeout(drawPar, 40)
+}
+
+par3.onload = drawPar
