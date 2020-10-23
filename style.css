@@ -4,7 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Staatliches', cursive;
 }
 
 wrapper {
@@ -128,7 +128,6 @@ loader side:nth-child(4) {
 }
 .nadp{
     position: absolute;
-    font-family: 'Staatliches', cursive;
     left: 60px;
     top: 340px;
     z-index: 29;
@@ -227,19 +226,52 @@ loader side:nth-child(4) {
 }
 .dom{
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     position: relative;
+    background: linear-gradient(0deg, #005070 ,#050038)
 }
 .volk{
     width: 100%;
-    height: 100vh;
-    background: url(2323.png);
+    height: 150vh;
+    background: url(volk.png);
     position: absolute;
     background-size: contain;
     background-position: 100% 100%;
-    top: 0;
+    top: 10px;
     left: 0;
     background-repeat: no-repeat;
+    z-index: 200;
+    transition: 0.8s;
+}
+.elkiPar{
+    width: 100%;
+    height: 150vh;
+    background: url(elki.png);
+    position: absolute;
+    background-size: contain;
+    background-position: 100% 100%;
+    top: 10px;
+    left: 0;
+    background-repeat: no-repeat;
+    z-index: 50;
+    transition: 0.4s;
+}
+.goraPar{
+    width: 100%;
+    height: 150vh;
+    background: url(goriii.png);
+    position: absolute;
+    background-size: contain;
+    background-position: 100% 100%;
+    top: 10px;
+    left: 0;
+    background-repeat: no-repeat;
+    z-index: 10;
+    transition: 0.3s;
+}
+#par{
+    position: relative;
+    z-index: 100;
 }
 
 .orangeToggle{
@@ -251,7 +283,10 @@ loader side:nth-child(4) {
     background: #000405;
     text-align: center;
 }
-
+.slider{
+    width: 100%;
+    height: 100vh;
+}
 
 
 
@@ -297,6 +332,15 @@ loader side:nth-child(4) {
         width: 360px;
         margin: 10px;
     }
+    .volk{
+        top: 30px;
+    }
+    .elkiPar{
+        top: 30px;
+    }
+    .goraPar{
+        top: 30px;
+    }
 }
 /*Responsive750*/
 @media (max-width: 750px){
@@ -331,6 +375,15 @@ loader side:nth-child(4) {
         width: 300px;
         height: 200px;
         background-size: contain;
+    }
+    .volk{
+        top: 30px;
+    }
+    .elkiPar{
+        top: 30px;
+    }
+    .goraPar{
+        top: 30px;
     }
 }
 /*Responsive450*/

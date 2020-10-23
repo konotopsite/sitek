@@ -2,6 +2,10 @@ let classDivs1 = document.querySelector('.classDivs1')
 let classDivs2 = document.querySelector('.classDivs2')
 let classDivs3 = document.querySelector('.classDivs3')
 
+let volk = document.querySelector('.volk')
+let elkiPar = document.querySelector('.elkiPar')
+let goraPar = document.querySelector('.goraPar')
+
 let nadp = document.querySelector('.nadp')
 let blo = document.querySelector('.blo')
 let hh2 = document.querySelector('.hh2')
@@ -19,12 +23,16 @@ function maxwid() {
     
     nadp.style.opacity = 0.6 - scrollPosition/1000;
     nadp.style.transform = 'translateY('+(scrollPosition/5)+'px)';
-    console.log(scrollPosition)
     hh2.style.opacity = 0.3 + scrollPosition/1000;
     if(scrollPosition < 800 ) {
         containerL.style.transform = 'translateX('+(-10 + scrollPosition/18)+'px)';
         containerR.style.transform = 'translateX('+(10 - scrollPosition/18)+'px)';
         twoContainers.style.opacity = 0.3 + scrollPosition/1000;
+    }
+    if(scrollPosition > document.body.clientHeight - window.innerHeight){
+        volk.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
+        elkiPar.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
+        goraPar.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
     }
 }
 function max1200() {
@@ -35,12 +43,16 @@ function max1200() {
     
     nadp.style.opacity = 0.8 - scrollPosition/1000;
     nadp.style.transform = 'translateY('+(scrollPosition/5)+'px)';
-    console.log(scrollPosition)
     hh2.style.opacity = 0.3 + scrollPosition/1000;
     if(scrollPosition < 600 ) {
         containerL.style.transform = 'translateX('+(-70 + scrollPosition/7)+'px)';
         containerR.style.transform = 'translateX('+(70 - scrollPosition/7)+'px)';
         twoContainers.style.opacity = 0.3 + scrollPosition/1000;
+    }
+    if(scrollPosition > document.body.clientHeight - window.innerHeight){
+        volk.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
+        elkiPar.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
+        goraPar.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
     }
 }
 function max900() {
@@ -51,12 +63,16 @@ function max900() {
     
     nadp.style.opacity = 0.8 - scrollPosition/1000;
     nadp.style.transform = 'translateY('+(scrollPosition/5)+'px)';
-    console.log(scrollPosition)
     hh2.style.opacity = 0.3 + scrollPosition/1000;
     if(scrollPosition < 600 ) {
         containerL.style.transform = 'translateX('+(-60 + scrollPosition/9)+'px)';
         containerR.style.transform = 'translateX('+(60 - scrollPosition/9)+'px)';
         twoContainers.style.opacity = 0.3 + scrollPosition/1000;
+    }
+    if(scrollPosition > document.body.clientHeight - window.innerHeight){
+        volk.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
+        elkiPar.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
+        goraPar.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
     }
 }
 function max750() {
@@ -67,12 +83,17 @@ function max750() {
     
     nadp.style.opacity = 0.8 - scrollPosition/1000;
     nadp.style.transform = 'translateY('+(scrollPosition/5)+'px)';
-    console.log(scrollPosition)
+    
     hh2.style.opacity = 0.3 + scrollPosition/1000;
     if(scrollPosition < 700 ) {
         containerL.style.transform = 'translateY(-'+(scrollPosition/14)+'px)';
         containerR.style.transform = 'translateY(-'+(scrollPosition/14)+'px)';
         twoContainers.style.opacity = 0.3 + scrollPosition/1000;
+    }
+    if(scrollPosition > document.body.clientHeight - window.innerHeight){
+        volk.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
+        elkiPar.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
+        goraPar.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
     }
 }
 function max450() {
@@ -83,21 +104,27 @@ function max450() {
     
     nadp.style.opacity = 0.8 - scrollPosition/1000;
     nadp.style.transform = 'translateY('+(scrollPosition/5)+'px)';
-    console.log(scrollPosition)
+    
     hh2.style.opacity = 0.3 + scrollPosition/1000;
     if(scrollPosition < 600 ) {
         containerL.style.transform = 'translateY(-'+(scrollPosition/14)+'px)';
         containerR.style.transform = 'translateY(-'+(scrollPosition/14)+'px)';
         twoContainers.style.opacity = 0.3 + scrollPosition/1000;
     }
+    if(scrollPosition > document.body.clientHeight - window.innerHeight){
+        volk.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
+        elkiPar.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
+        goraPar.style.transform = 'translateY('+((document.body.clientHeight - (scrollPosition+ window.innerHeight))+100)+'px)';
+    } 
 }
+
+
+
 
 function paralaxx(e) {
     if(window.innerWidth > 1199){
         maxwid()
-        console.log('1200>')
-        console.log(window)
-        
+        console.log('1200>') 
     }
     if(window.innerWidth < 1200 && window.innerWidth > 899) {
         max1200()
@@ -266,7 +293,7 @@ document.querySelector('.invizBut').onclick = ()=>{
         draw()
         drawStars()
         canva.style.opacity = 0.5;
-        cnv.style.opacity = 0.1;
+        cnv.style.opacity = 0.2;
         classDivs1.style.opacity = 0;
         console.log(counterCanvas)
         counterCanvas = 1;
@@ -279,7 +306,7 @@ document.querySelector('.invizBut').onclick = ()=>{
     else{
         counterCanvas = 0;
         cnv.style.opacity = 0.15;
-        classDivs1.style.opacity = 1;
+        classDivs1.style.opacity = 2;
         canva.style.opacity = 0;
         clearTimeout(timStars)
         clearTimeout(tim)
@@ -311,8 +338,9 @@ var arrParObjs = [];
 canvvolk.width = document.querySelector('.dom').clientWidth
 canvvolk.height = document.querySelector('.dom').clientHeight
 window.onresize = ()=>{
-    canvvolk.width = classDivs1.clientWidth;
-    canvvolk.height = classDivs1.clientHeight;
+    console.log()
+    canvvolk.width = document.querySelector('.dom').clientWidth;
+    canvvolk.height = document.querySelector('.dom').clientHeight;
 }
 
 var par1 = new Image();
@@ -431,12 +459,18 @@ function drawPar() {
                     pob.hhi = pob.wwi;
                 }
             }
-
+            if(pob.yy > canvvolk.height  - canvvolk.height/2){
+                ctxVolk.globalAlpha = 0.07
+            }
+            
         ctxVolk.drawImage(pob.imagee, pob.xx ,pob.yy ,pob.wwi ,pob.hhi )
 }
     
-
+console.log('111122222')
 timVolk = setTimeout(drawPar, 40)
 }
 
+
 par3.onload = drawPar
+
+
